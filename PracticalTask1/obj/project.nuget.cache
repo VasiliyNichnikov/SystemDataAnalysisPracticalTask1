@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "qCGvF0/oSDdvPyufw2ygvt2nYtcrW4IsIQ/zkB4PYEn0UE5ZqEArXF/IvyX0kPmO1qSL3Lv8v/PkT7lyzKqdbQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\quikgraph\\2.5.0\\quikgraph.2.5.0.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\quikgraph.graphviz\\2.5.0\\quikgraph.graphviz.2.5.0.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,79 @@
+﻿{
+  "Departments": [
+    {
+      "Id": 0,
+      "Name": "Отдел маркетинга",
+      "Workers": null
+    },
+    {
+      "Id": 1,
+      "Name": "Отдел разработки",
+      "Workers": [1, 2]
+    },
+    {
+      "Id": 2,
+      "Name": "Отдел тестирования",
+      "Workers": [0, 3]
+    },
+    {
+      "Id": 3,
+      "Name": "Отдел дизайна",
+      "Workers": [4]
+    }
+  ],
+
+
+  "Staff": [
+    {
+      "Id": 0,
+      "Name": "Руслан",
+      "Surname": "Осипов",
+      "MiddleName": "Егорович",
+      "Age": 20,
+      "Salary": 50.0,
+      "Post": null,
+      "Subordinates": null,
+      "PhoneNumber": 79998881234
+    },
+    {
+      "Id": 1,
+      "Name": "Вера",
+      "Surname": "Шишкина",
+      "MiddleName": "Никитична",
+      "Age": 25,
+      "Salary": 100.0,
+      "Subordinates": [0],
+      "PhoneNumber": 79998881234
+    },
+    {
+      "Id": 2,
+      "Name": "Малика",
+      "Surname": "Сорокина",
+      "MiddleName": "Кирилловна",
+      "Age": 32,
+      "Salary": 150.0,
+      "Subordinates": [0, 3],
+      "PhoneNumber": 79998881234
+    },
+    {
+      "Id": 3,
+      "Name": "Дарья",
+      "Surname": "Орлова",
+      "MiddleName": "Всеволодовна",
+      "Age": 25,
+      "Salary": 40.0,
+      "Subordinates": null,
+      "PhoneNumber": 79998881234
+    },
+    {
+      "Id": 4,
+      "Name": "Марк",
+      "Surname": "Осипов",
+      "MiddleName": "Саввич",
+      "Age": 54,
+      "Salary": 200.0,
+      "Subordinates": [0, 1, 2, 3],
+      "PhoneNumber": 79998881234
+    }
+  ]
+}

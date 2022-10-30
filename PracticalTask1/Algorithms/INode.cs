@@ -7,6 +7,6 @@ namespace PracticalTask1.Algorithms
         T Data { get; }
         bool Visited { get; set; }
         IReadOnlyList<INode<T>> Neighbors { get; }
-        bool CheckVerbatim();
+        bool CheckVerbatim(TypeSearch type);
     }
 }

@@ -41,7 +41,7 @@ namespace PracticalTask1.Algorithms
         /// </summary>
         /// <param name="specificObject"></param>
         /// <returns></returns>
-        public bool CheckSearchValueForSpecificObject(T specificObject)
+        public bool CheckSearchValueForSpecificObjectMatchingCompletely(T specificObject)
         {
             var fieldsInfo = GetFieldsInfo();
             
@@ -61,7 +61,62 @@ namespace PracticalTask1.Algorithms
             }
             return true;
         }
+        
+        /// <summary>
+        /// Проверяет присутсвие значение в конкретном объекте
+        /// </summary>
+        /// <returns></returns>
+        public bool CheckSearchValueForSpecificObjectMatchingParts(T specificObject)
+        {
+            var fieldsInfo = GetFieldsInfo();
+            
+            foreach (var field in fieldsInfo)
+            {
+                foreach (var kvp in _searchData)
+                {
+                    if (field.Name == kvp.Key)
+                    {
+                        var valueOne = TranslateObjectToString(field.GetValue(specificObject));
+                        var valueTwo = TranslateObjectToString(kvp.Value.SearchValue);
+                        if (valueOne.Contains(valueTwo, StringComparison.OrdinalIgnoreCase) == false)
+                        {
+                            return false;
+                        }
+                    }
+                    
+                }
+            }
+            return true;
+        }
 
+        /// <summary>
+        /// Проверяем чтобы значение конкретного объекта не совпадало с записанными для поиска 
+        /// </summary>
+        /// <param name="specificObject"></param>
+        /// <returns></returns>
+        public bool CheckSearchValueForSpecificObjectNotMatching(T specificObject)
+        {
+            var fieldsInfo = GetFieldsInfo();
+            
+            foreach (var field in fieldsInfo)
+            {
+                foreach (var kvp in _searchData)
+                {
+                    if (field.Name == kvp.Key)
+                    {
+                        var valueOne = TranslateObjectToString(field.GetValue(specificObject));
+                        var valueTwo = TranslateObjectToString(kvp.Value.SearchValue);
+                        if (valueOne.Contains(valueTwo, StringComparison.OrdinalIgnoreCase))
+                        {
+                            return false;
+                        }
+                    }
+                    
+                }
+            }
+            return true;
+        }
+        
         /// <summary>
         /// Выбираем поле, с помощью которого будем осуществлять поиски
         /// Кроме этого вводим значение которому нужно соответсвовать
@@ -72,7 +127,7 @@ namespace PracticalTask1.Algorithms
         {
             if (CheckObjectForTypeCompliance(searchValue) == false)
             {
-                return; // todo наверно лучше выкидывать ошибку
+                throw new Exception(); // todo отфильтровать ошибку
             }
             
             var fieldsInfo = GetFieldsInfo();
@@ -117,6 +172,25 @@ namespace PracticalTask1.Algorithms
         private FieldInfo[] GetFieldsInfo()
         {
             return typeof(T).GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
+        }
+
+        private string TranslateObjectToString(object value)
+        {
+            if (value is int valueInt)
+            {
+                return valueInt.ToString();
+            } 
+            if (value is float valueFloat)
+            {
+                return valueFloat.ToString("0.0000");
+            }
+
+            if (value is string valueString)
+            {
+                return valueString;
+            }
+
+            throw new Exception(); // todo отфильтровать ошибку
         }
     }
 }

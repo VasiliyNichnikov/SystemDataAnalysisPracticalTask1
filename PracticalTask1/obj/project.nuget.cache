@@ -1,13 +1,102 @@
 {
   "version": 2,
-  "dgSpecHash": "qCGvF0/oSDdvPyufw2ygvt2nYtcrW4IsIQ/zkB4PYEn0UE5ZqEArXF/IvyX0kPmO1qSL3Lv8v/PkT7lyzKqdbQ==",
+  "dgSpecHash": "lnT2Nb2cTikYki0Re7UF5weK6h8nQNQyKefFuUU7Mj8+lQUElFQEtmda2ssRTp3NqpRzLK1nhP3WKfEu+EX6Hw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
+  "projectFilePath": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\v.nichnikov\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\v.nichnikov\\.nuget\\packages\\quikgraph\\2.5.0\\quikgraph.2.5.0.nupkg.sha512",
-    "C:\\Users\\v.nichnikov\\.nuget\\packages\\quikgraph.graphviz\\2.5.0\\quikgraph.graphviz.2.5.0.nupkg.sha512",
-    "C:\\Users\\v.nichnikov\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+    "C:\\Users\\vnich\\.nuget\\packages\\dotnet.contracts\\1.10.10126.1\\dotnet.contracts.1.10.10126.1.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\dotparser\\1.0.6\\dotparser.1.0.6.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\fsharp.core\\2.0.0\\fsharp.core.2.0.0.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\fsharpx.collections.experimental\\1.7.3\\fsharpx.collections.experimental.1.7.3.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\fsharpx.core\\1.7.3\\fsharpx.core.1.7.3.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\yc.quickgraph\\3.7.4\\yc.quickgraph.3.7.4.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "YC.QuickGraph 3.7.4 depends on DotNet.Contracts (>= 0.0.0) but DotNet.Contracts 0.0.0 was not found. An approximate best match of DotNet.Contracts 1.10.10126.1 was resolved.",
+      "libraryId": "DotNet.Contracts",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "YC.QuickGraph 3.7.4 depends on FSharp.Core (>= 0.0.0) but FSharp.Core 0.0.0 was not found. An approximate best match of FSharp.Core 2.0.0 was resolved.",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "DotParser 1.0.6 does not provide an inclusive lower bound for dependency FSharpx.Collections.Experimental. An approximate best match of FSharpx.Collections.Experimental 1.7.3 was resolved.",
+      "libraryId": "FSharpx.Collections.Experimental",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DotParser 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DotParser",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharp.Core 2.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharpx.Collections.Experimental 1.7.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharpx.Collections.Experimental",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharpx.Core 1.7.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharpx.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'YC.QuickGraph 3.7.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "YC.QuickGraph",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

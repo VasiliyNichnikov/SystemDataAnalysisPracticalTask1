@@ -3,7 +3,7 @@
     {
       "Id": 0,
       "Name": "Отдел маркетинга",
-      "Workers": null
+      "Workers": [5]
     },
     {
       "Id": 1,
@@ -72,7 +72,17 @@
       "MiddleName": "Саввич",
       "Age": 54,
       "Salary": 200.0,
-      "Subordinates": [0, 1, 2, 3],
+      "Subordinates": [0, 1, 2, 3, 5],
+      "PhoneNumber": 79998881234
+    },
+    {
+      "Id": 5,
+      "Name": "Кира",
+      "Surname": "Леонова",
+      "MiddleName": "Александровна",
+      "Age": 54,
+      "Salary": 220.0,
+      "Subordinates": null,
       "PhoneNumber": 79998881234
     }
   ]

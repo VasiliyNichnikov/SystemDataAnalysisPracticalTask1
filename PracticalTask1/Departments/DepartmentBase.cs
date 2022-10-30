@@ -5,15 +5,17 @@ namespace PracticalTask1
 {
     public abstract class DepartmentBase
     {
-        public string Name { get; }
+        public string Name => _name;
         public IReadOnlyList<EmployeeBase> Staff => (IReadOnlyList<EmployeeBase>)_staff;
 
         private readonly IList<EmployeeBase> _staff;
         private static readonly FieldHandler<DepartmentBase> _fieldHandler = new();
 
+        private string _name;
+
         protected DepartmentBase(string name)
         {
-            Name = name;
+            _name = name;
             _staff = new List<EmployeeBase>();
         }
 
@@ -49,6 +51,11 @@ namespace PracticalTask1
         public static void SelectSearchField(string fieldName, float searchValue)
         {
             _fieldHandler.SelectSearchField(fieldName, searchValue);
+        }
+
+        public override string ToString()
+        {
+            return $"<{Name}>";
         }
     }
 }

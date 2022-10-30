@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using PracticalTask1.Algorithms;
 
 namespace PracticalTask1
@@ -11,9 +12,9 @@ namespace PracticalTask1
         public string Name => _name;
         public string Surname => _surname;
         public string MiddleName => _middleName;
-        public long PhoneNumber { get; private set; }
-        public int Age { get; private set; }
-        public float Salary { get; private set; }
+        public long PhoneNumber => _phoneNumber;
+        public int Age => _age;
+        public float Salary => _salary;
         public DepartmentBase Department { get; private set; }
         public IReadOnlyList<EmployeeBase> Subordinates => _subordinates.AsReadOnly();
 
@@ -21,18 +22,21 @@ namespace PracticalTask1
 
         private static readonly FieldHandler<EmployeeBase> _fieldHandler = new();
 
-        private string _name;
-        private string _surname;
-        private string _middleName;
+        private readonly string _name;
+        private readonly string _surname;
+        private readonly string _middleName;
+        private readonly int _age;
+        private readonly float _salary;
+        private readonly long _phoneNumber;
 
         protected EmployeeBase(string name, string surname, string middleName, int age, float salary, long phoneNumber)
         {
             _name = name;
             _surname = surname;
             _middleName = middleName;
-            Age = age;
-            Salary = salary;
-            PhoneNumber = phoneNumber;
+            _age = age;
+            _salary = salary;
+            _phoneNumber = phoneNumber;
         }
 
         /// <summary>
@@ -109,10 +113,24 @@ namespace PracticalTask1
         /// todo Для строк нужно проверка на не точное совпадение
         /// </summary>
         /// <returns></returns>
-        public bool CheckVerbatim()
+        public bool CheckVerbatim(TypeSearch type)
         {
-            return _fieldHandler.CheckSearchValueForSpecificObject(this);
+            switch (type)
+            {
+                case TypeSearch.Equal:
+                    return _fieldHandler.CheckSearchValueForSpecificObjectMatchingCompletely(this);
+                case TypeSearch.InPresent:
+                    return _fieldHandler.CheckSearchValueForSpecificObjectMatchingParts(this);
+                case TypeSearch.Missing:
+                    return _fieldHandler.CheckSearchValueForSpecificObjectNotMatching(this);
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(type), type, null);
+            }
         }
-        
+
+        public override string ToString()
+        {
+            return $"<{_name}-{_surname}-{_middleName}-{_age}>";
+        }
     }
 }

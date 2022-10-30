@@ -8,12 +8,51 @@
     ".NETCoreApp,Version=v5.0": {
       "PracticalTask1/1.0.0": {
         "dependencies": {
-          "QuikGraph": "2.5.0",
-          "QuikGraph.Graphviz": "2.5.0",
-          "System.Drawing.Common": "6.0.0"
+          "System.Drawing.Common": "6.0.0",
+          "YC.QuickGraph": "3.7.4"
         },
         "runtime": {
           "PracticalTask1.dll": {}
+        }
+      },
+      "DotNet.Contracts/1.10.10126.1": {},
+      "DotParser/1.0.6": {
+        "dependencies": {
+          "FSharp.Core": "2.0.0",
+          "FSharpx.Collections.Experimental": "1.7.3"
+        },
+        "runtime": {
+          "lib/net45/DotParser.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "FSharp.Core/2.0.0": {
+        "runtime": {
+          "lib/FSharp.Core.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.30319.1"
+          }
+        }
+      },
+      "FSharpx.Collections.Experimental/1.7.3": {
+        "dependencies": {
+          "FSharpx.Core": "1.7.3"
+        },
+        "runtime": {
+          "lib/40/FSharpx.Collections.Experimental.dll": {
+            "assemblyVersion": "1.7.3.0",
+            "fileVersion": "1.7.3.0"
+          }
+        }
+      },
+      "FSharpx.Core/1.7.3": {
+        "runtime": {
+          "lib/40/FSharpx.Core.dll": {
+            "assemblyVersion": "1.7.3.0",
+            "fileVersion": "1.7.3.0"
+          }
         }
       },
       "Microsoft.Win32.SystemEvents/6.0.0": {
@@ -29,25 +68,6 @@
             "assetType": "runtime",
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.21.52210"
-          }
-        }
-      },
-      "QuikGraph/2.5.0": {
-        "runtime": {
-          "lib/netstandard2.0/QuikGraph.dll": {
-            "assemblyVersion": "2.5.0.0",
-            "fileVersion": "2.5.0.0"
-          }
-        }
-      },
-      "QuikGraph.Graphviz/2.5.0": {
-        "dependencies": {
-          "QuikGraph": "2.5.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/QuikGraph.Graphviz.dll": {
-            "assemblyVersion": "2.5.0.0",
-            "fileVersion": "2.5.0.0"
           }
         }
       },
@@ -75,6 +95,47 @@
             "fileVersion": "6.0.21.52210"
           }
         }
+      },
+      "YC.QuickGraph/3.7.4": {
+        "dependencies": {
+          "DotNet.Contracts": "1.10.10126.1",
+          "DotParser": "1.0.6",
+          "FSharp.Core": "2.0.0"
+        },
+        "runtime": {
+          "lib/net45/YC.QuickGraph.Data.dll": {
+            "assemblyVersion": "3.7.4.0",
+            "fileVersion": "3.7.4.0"
+          },
+          "lib/net45/YC.QuickGraph.FSA.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/net45/YC.QuickGraph.FST.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          },
+          "lib/net45/YC.QuickGraph.Glee.dll": {
+            "assemblyVersion": "3.7.4.0",
+            "fileVersion": "3.7.4.0"
+          },
+          "lib/net45/YC.QuickGraph.Graphviz.dll": {
+            "assemblyVersion": "3.7.4.0",
+            "fileVersion": "3.7.4.0"
+          },
+          "lib/net45/YC.QuickGraph.Petri.dll": {
+            "assemblyVersion": "3.7.4.0",
+            "fileVersion": "3.7.4.0"
+          },
+          "lib/net45/YC.QuickGraph.dll": {
+            "assemblyVersion": "3.7.4.0",
+            "fileVersion": "3.7.4.0"
+          },
+          "lib/net45/YC.QuickGraphFS.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
       }
     }
   },
@@ -84,6 +145,41 @@
       "serviceable": false,
       "sha512": ""
     },
+    "DotNet.Contracts/1.10.10126.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D7WZPOKQdI1jpA4Tuw7Pe1hpJA9ZeGrVXKyGphOX6jZDDA4jhM43U1beh+CK3IFgZFlWPAF2Ft5obzqodc/zdg==",
+      "path": "dotnet.contracts/1.10.10126.1",
+      "hashPath": "dotnet.contracts.1.10.10126.1.nupkg.sha512"
+    },
+    "DotParser/1.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2wx8vE10fzKqdpV8IxbgaeJ3toKBnLSfqhta6/qgfHiwH1TzBaO12GKwqBTD9iAp08etXZDpxlPkMYKvk8/aXw==",
+      "path": "dotparser/1.0.6",
+      "hashPath": "dotparser.1.0.6.nupkg.sha512"
+    },
+    "FSharp.Core/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EmdOwOj+yqU9rsIgrh+zshAGQTzpzGm+pBG8LunuSed/Rn5PC/VcPh1CC/uea0T8YOXIIZkGJqQ5D0t8hpAOIg==",
+      "path": "fsharp.core/2.0.0",
+      "hashPath": "fsharp.core.2.0.0.nupkg.sha512"
+    },
+    "FSharpx.Collections.Experimental/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HmA7NnoFet0hDTg/REjUaSa2TNuj5px8uMDUEIELvX9ag6JsyWzg0fRX33ypLxmldW/xvrvc0IyUCUb1UnsdhQ==",
+      "path": "fsharpx.collections.experimental/1.7.3",
+      "hashPath": "fsharpx.collections.experimental.1.7.3.nupkg.sha512"
+    },
+    "FSharpx.Core/1.7.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1eYjFfp747MqsNGeJtyimmrn8NXmu+7hPGNfZG/m9EHJ5RXfwi26rG6Bz6tgdFpYTEng376L5c+Rr7lniqsNEg==",
+      "path": "fsharpx.core/1.7.3",
+      "hashPath": "fsharpx.core.1.7.3.nupkg.sha512"
+    },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "type": "package",
       "serviceable": true,
@@ -91,26 +187,19 @@
       "path": "microsoft.win32.systemevents/6.0.0",
       "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
     },
-    "QuikGraph/2.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-sG+mrPpXwxlXknRK5VqWUGiOmDACa9X+3ftlkQIMgOZUqxVOQSe0+HIU9PTjwqazy0pqSf8MPDXYFGl0GYWcKw==",
-      "path": "quikgraph/2.5.0",
-      "hashPath": "quikgraph.2.5.0.nupkg.sha512"
-    },
-    "QuikGraph.Graphviz/2.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pCKpErtHGxUi72OT+2aIg1pdHdUqpqEM5J/i9rmVsEVDE4X0xb1HBPWdxv/FLZmbBjk0ZogZXZttUL3CnAPpNw==",
-      "path": "quikgraph.graphviz/2.5.0",
-      "hashPath": "quikgraph.graphviz.2.5.0.nupkg.sha512"
-    },
     "System.Drawing.Common/6.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
       "path": "system.drawing.common/6.0.0",
       "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    },
+    "YC.QuickGraph/3.7.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iURC63gD7noQ2ICJT+MghH+06P9gN1zSMwAhNlDC9ABLx9p9NH69eMJlvlfSijJquKKXqRkZCfDbrS2CXboPYg==",
+      "path": "yc.quickgraph/3.7.4",
+      "hashPath": "yc.quickgraph.3.7.4.nupkg.sha512"
     }
   }
 }

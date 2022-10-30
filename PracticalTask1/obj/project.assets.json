@@ -2,6 +2,60 @@
   "version": 3,
   "targets": {
     "net5.0": {
+      "DotNet.Contracts/1.10.10126.1": {
+        "type": "package"
+      },
+      "DotParser/1.0.6": {
+        "type": "package",
+        "dependencies": {
+          "FSharp.Core": "(, )",
+          "FSharpx.Collections.Experimental": "(, )"
+        },
+        "compile": {
+          "lib/net45/DotParser.dll": {}
+        },
+        "runtime": {
+          "lib/net45/DotParser.dll": {}
+        }
+      },
+      "FSharp.Core/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/FSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/FSharp.Core.dll": {}
+        }
+      },
+      "FSharpx.Collections.Experimental/1.7.3": {
+        "type": "package",
+        "dependencies": {
+          "FSharpx.Core": "[1.7.3]"
+        },
+        "compile": {
+          "lib/40/FSharpx.Collections.Experimental.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/40/FSharpx.Collections.Experimental.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "FSharpx.Core/1.7.3": {
+        "type": "package",
+        "compile": {
+          "lib/40/FSharpx.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/40/FSharpx.Core.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
@@ -21,35 +75,6 @@
           "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll": {
             "assetType": "runtime",
             "rid": "win"
-          }
-        }
-      },
-      "QuikGraph/2.5.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/QuikGraph.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/QuikGraph.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "QuikGraph.Graphviz/2.5.0": {
-        "type": "package",
-        "dependencies": {
-          "QuikGraph": "2.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/QuikGraph.Graphviz.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/QuikGraph.Graphviz.dll": {
-            "related": ".xml"
           }
         }
       },
@@ -81,10 +106,671 @@
             "rid": "win"
           }
         }
+      },
+      "YC.QuickGraph/3.7.4": {
+        "type": "package",
+        "dependencies": {
+          "DotNet.Contracts": "0.0.0",
+          "DotParser": "1.0.6",
+          "FSharp.Core": "0.0.0"
+        },
+        "compile": {
+          "lib/net45/YC.QuickGraph.Data.dll": {},
+          "lib/net45/YC.QuickGraph.FSA.dll": {},
+          "lib/net45/YC.QuickGraph.FST.dll": {},
+          "lib/net45/YC.QuickGraph.Glee.dll": {},
+          "lib/net45/YC.QuickGraph.Graphviz.dll": {},
+          "lib/net45/YC.QuickGraph.Petri.dll": {},
+          "lib/net45/YC.QuickGraph.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/YC.QuickGraphFS.dll": {}
+        },
+        "runtime": {
+          "lib/net45/YC.QuickGraph.Data.dll": {},
+          "lib/net45/YC.QuickGraph.FSA.dll": {},
+          "lib/net45/YC.QuickGraph.FST.dll": {},
+          "lib/net45/YC.QuickGraph.Glee.dll": {},
+          "lib/net45/YC.QuickGraph.Graphviz.dll": {},
+          "lib/net45/YC.QuickGraph.Petri.dll": {},
+          "lib/net45/YC.QuickGraph.dll": {
+            "related": ".xml"
+          },
+          "lib/net45/YC.QuickGraphFS.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "DotNet.Contracts/1.10.10126.1": {
+      "sha512": "D7WZPOKQdI1jpA4Tuw7Pe1hpJA9ZeGrVXKyGphOX6jZDDA4jhM43U1beh+CK3IFgZFlWPAF2Ft5obzqodc/zdg==",
+      "type": "package",
+      "path": "dotnet.contracts/1.10.10126.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Bin/CCCheck.exe.config",
+        "Bin/CodeContractsVSPropertyPane.dll",
+        "Bin/CodeToolsUpdate.exe",
+        "Bin/ITaskManager.dll",
+        "Bin/MsBuildCodeContracts.dll",
+        "Bin/cccheck.exe",
+        "Bin/ccdocgen.exe",
+        "Bin/ccdocgen.exe.config",
+        "Bin/ccrefgen.exe",
+        "Bin/ccrefgen.exe.config",
+        "Bin/ccrewrite.exe",
+        "Bin/ccrewrite.exe.config",
+        "Contracts/.NETFramework/v4.0/Microsoft.VisualBasic.Compatibility.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/Microsoft.VisualBasic.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/PresentationCore.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/PresentationFramework.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.ComponentModel.Composition.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Configuration.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Configuration.Install.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Core.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Data.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Data.Services.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.DirectoryServices.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Drawing.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Numerics.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Runtime.Caching.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Security.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.ServiceModel.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.ServiceProcess.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Web.ApplicationServices.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Web.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Windows.Forms.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Xml.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/System.Xml.Linq.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/WindowsBase.Contracts.dll",
+        "Contracts/.NETFramework/v4.0/mscorlib.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/Microsoft.VisualBasic.Compatibility.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/Microsoft.VisualBasic.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/PresentationCore.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/PresentationFramework.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.ComponentModel.Composition.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Configuration.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Configuration.Install.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Core.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Data.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Data.Services.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.DirectoryServices.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Drawing.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Numerics.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Runtime.Caching.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Security.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.ServiceModel.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.ServiceProcess.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Web.ApplicationServices.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Web.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Windows.Forms.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Xml.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/System.Xml.Linq.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/WindowsBase.Contracts.dll",
+        "Contracts/.NETFramework/v4.5/mscorlib.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/Microsoft.VisualBasic.Compatibility.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/Microsoft.VisualBasic.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/PresentationCore.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/PresentationFramework.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.ComponentModel.Composition.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Configuration.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Configuration.Install.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Core.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Data.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Data.Services.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.DirectoryServices.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Drawing.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Numerics.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Runtime.Caching.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Security.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.ServiceModel.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.ServiceProcess.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Web.ApplicationServices.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Web.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Windows.Forms.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Xml.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/System.Xml.Linq.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/WindowsBase.Contracts.dll",
+        "Contracts/.NETFramework/v4.6/mscorlib.Contracts.dll",
+        "Contracts/Silverlight/v3.0/Microsoft.Contracts.dll",
+        "Contracts/Silverlight/v3.0/Microsoft.VisualBasic.Contracts.dll",
+        "Contracts/Silverlight/v3.0/System.Contracts.dll",
+        "Contracts/Silverlight/v3.0/System.Core.Contracts.dll",
+        "Contracts/Silverlight/v3.0/System.Windows.Browser.Contracts.dll",
+        "Contracts/Silverlight/v3.0/System.Windows.Contracts.dll",
+        "Contracts/Silverlight/v3.0/System.Xml.Contracts.dll",
+        "Contracts/Silverlight/v3.0/System.Xml.Linq.Contracts.dll",
+        "Contracts/Silverlight/v3.0/mscorlib.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Microsoft.VisualBasic.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Profile/WindowsPhone/Microsoft.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Profile/WindowsPhone/System.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Profile/WindowsPhone/System.Core.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Profile/WindowsPhone/System.Windows.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Profile/WindowsPhone/System.Xml.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Profile/WindowsPhone/System.Xml.Linq.Contracts.dll",
+        "Contracts/Silverlight/v4.0/Profile/WindowsPhone/mscorlib.Contracts.dll",
+        "Contracts/Silverlight/v4.0/System.Contracts.dll",
+        "Contracts/Silverlight/v4.0/System.Core.Contracts.dll",
+        "Contracts/Silverlight/v4.0/System.Windows.Browser.Contracts.dll",
+        "Contracts/Silverlight/v4.0/System.Windows.Contracts.dll",
+        "Contracts/Silverlight/v4.0/System.Xml.Contracts.dll",
+        "Contracts/Silverlight/v4.0/System.Xml.Linq.Contracts.dll",
+        "Contracts/Silverlight/v4.0/mscorlib.Contracts.dll",
+        "Contracts/Silverlight/v5.0/Microsoft.VisualBasic.Contracts.dll",
+        "Contracts/Silverlight/v5.0/System.Contracts.dll",
+        "Contracts/Silverlight/v5.0/System.Core.Contracts.dll",
+        "Contracts/Silverlight/v5.0/System.Windows.Browser.Contracts.dll",
+        "Contracts/Silverlight/v5.0/System.Windows.Contracts.dll",
+        "Contracts/Silverlight/v5.0/System.Xml.Contracts.dll",
+        "Contracts/Silverlight/v5.0/mscorlib.Contracts.dll",
+        "Contracts/v3.5/Microsoft.Contracts.dll",
+        "Contracts/v3.5/Microsoft.VisualBasic.Compatibility.Contracts.dll",
+        "Contracts/v3.5/Microsoft.VisualBasic.Contracts.dll",
+        "Contracts/v3.5/System.Configuration.Contracts.dll",
+        "Contracts/v3.5/System.Configuration.Install.Contracts.dll",
+        "Contracts/v3.5/System.Contracts.dll",
+        "Contracts/v3.5/System.Core.Contracts.dll",
+        "Contracts/v3.5/System.Data.Contracts.dll",
+        "Contracts/v3.5/System.DirectoryServices.Contracts.dll",
+        "Contracts/v3.5/System.Drawing.Contracts.dll",
+        "Contracts/v3.5/System.Security.Contracts.dll",
+        "Contracts/v3.5/System.ServiceProcess.Contracts.dll",
+        "Contracts/v3.5/System.Web.Contracts.dll",
+        "Contracts/v3.5/System.Windows.Forms.Contracts.dll",
+        "Contracts/v3.5/System.Xml.Contracts.dll",
+        "Contracts/v3.5/System.Xml.Linq.Contracts.dll",
+        "Contracts/v3.5/WindowsBase.Contracts.dll",
+        "Contracts/v3.5/mscorlib.Contracts.dll",
+        "Documentation/ContractsManual.pdf",
+        "Languages/CSharp/Code Contract Snippets/contractassert.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractassume.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractensures.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractensuresnonnull.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractensuresnotisnullorempty.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractinterface.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractinvariant.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractinvariantmethod.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractinvariantnonnull.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractinvariantnotisnullorempty.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractold.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractrequires.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractrequiresalways.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractrequiresalwaysnotisnullorempty.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractrequiresalwaysnotnull.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractrequiresnotisnullorempty.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractrequiresnotnull.snippet",
+        "Languages/CSharp/Code Contract Snippets/contractresult.snippet",
+        "Languages/CSharp/ContractDeclarativeAssemblyAttribute.cs",
+        "Languages/CSharp/ContractExtensions.cs",
+        "Languages/VisualBasic/Code Contract Snippets/contractassert.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractassume.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractensures.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractensuresnonnull.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractensuresnotisnullorempty.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractinterface.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractinvariant.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractinvariantmethod.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractinvariantnonnull.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractinvariantnotisnullorempty.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractold.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractrequires.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractrequiresalways.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractrequiresalwaysnotisnullorempty.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractrequiresalwaysnotnull.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractrequiresnotisnullorempty.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractrequiresnotnull.snippet",
+        "Languages/VisualBasic/Code Contract Snippets/contractresult.snippet",
+        "Languages/VisualBasic/ContractDeclarativeAssemblyAttribute.vb",
+        "Languages/VisualBasic/ContractExtensions.vb",
+        "License.rtf",
+        "MsBuild/v12.0/Microsoft.CodeContractAnalysis.targets",
+        "MsBuild/v12.0/Microsoft.CodeContracts.targets",
+        "MsBuild/v14.0/Microsoft.CodeContractAnalysis.targets",
+        "MsBuild/v14.0/Microsoft.CodeContracts.targets",
+        "MsBuild/v3.5/Microsoft.CodeContractAnalysis.targets",
+        "MsBuild/v3.5/Microsoft.CodeContracts.targets",
+        "MsBuild/v4.0/Microsoft.CodeContractAnalysis.targets",
+        "MsBuild/v4.0/Microsoft.CodeContracts.targets",
+        "PublicAssemblies/Silverlight3/Microsoft.Contracts.dll",
+        "PublicAssemblies/Silverlight3/Redist.txt",
+        "PublicAssemblies/WindowsPhone71/Microsoft.Contracts.dll",
+        "PublicAssemblies/WindowsPhone71/Redist.txt",
+        "PublicAssemblies/v3.5/Microsoft.Contracts.dll",
+        "PublicAssemblies/v3.5/Redist.txt",
+        "Samples/Samples.zip",
+        "Sandcastle/Sandcastle.zip",
+        "dotnet.contracts.1.10.10126.1.nupkg.sha512",
+        "dotnet.contracts.nuspec"
+      ]
+    },
+    "DotParser/1.0.6": {
+      "sha512": "2wx8vE10fzKqdpV8IxbgaeJ3toKBnLSfqhta6/qgfHiwH1TzBaO12GKwqBTD9iAp08etXZDpxlPkMYKvk8/aXw==",
+      "type": "package",
+      "path": "dotparser/1.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dotparser.1.0.6.nupkg.sha512",
+        "dotparser.nuspec",
+        "lib/net45/DotParser.dll"
+      ]
+    },
+    "FSharp.Core/2.0.0": {
+      "sha512": "EmdOwOj+yqU9rsIgrh+zshAGQTzpzGm+pBG8LunuSed/Rn5PC/VcPh1CC/uea0T8YOXIIZkGJqQ5D0t8hpAOIg==",
+      "type": "package",
+      "path": "fsharp.core/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fsharp.core.2.0.0.nupkg.sha512",
+        "fsharp.core.nuspec",
+        "lib/FSharp.Core.dll",
+        "lib/FSharp.Core.xml"
+      ]
+    },
+    "FSharpx.Collections.Experimental/1.7.3": {
+      "sha512": "HmA7NnoFet0hDTg/REjUaSa2TNuj5px8uMDUEIELvX9ag6JsyWzg0fRX33ypLxmldW/xvrvc0IyUCUb1UnsdhQ==",
+      "type": "package",
+      "path": "fsharpx.collections.experimental/1.7.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "docs/FSharpx.Collections.Experimental/AltBinRndAccList`1.htm",
+        "docs/FSharpx.Collections.Experimental/AltBinaryRandomAccessListModule.htm",
+        "docs/FSharpx.Collections.Experimental/AssemblyInfo.htm",
+        "docs/FSharpx.Collections.Experimental/BKTree.htm",
+        "docs/FSharpx.Collections.Experimental/BKTree`1.htm",
+        "docs/FSharpx.Collections.Experimental/BankersDequeModule.htm",
+        "docs/FSharpx.Collections.Experimental/BankersDeque`1.htm",
+        "docs/FSharpx.Collections.Experimental/BankersQueueModule.htm",
+        "docs/FSharpx.Collections.Experimental/BankersQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/BatchedDequeModule.htm",
+        "docs/FSharpx.Collections.Experimental/BatchedDeque`1.htm",
+        "docs/FSharpx.Collections.Experimental/BatchedQueueModule.htm",
+        "docs/FSharpx.Collections.Experimental/BatchedQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/BinaryRandomAccessListModule.htm",
+        "docs/FSharpx.Collections.Experimental/BinaryRandomAccessList`1.htm",
+        "docs/FSharpx.Collections.Experimental/BinaryTreeZipper.htm",
+        "docs/FSharpx.Collections.Experimental/BinaryTreeZipper`1.htm",
+        "docs/FSharpx.Collections.Experimental/BinaryTree`1.htm",
+        "docs/FSharpx.Collections.Experimental/BinomialHeap.htm",
+        "docs/FSharpx.Collections.Experimental/BinomialHeap`1.htm",
+        "docs/FSharpx.Collections.Experimental/BinomialTree`1.htm",
+        "docs/FSharpx.Collections.Experimental/BootstrappedQueue.htm",
+        "docs/FSharpx.Collections.Experimental/BootstrappedQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/BottomUpMergeSort.htm",
+        "docs/FSharpx.Collections.Experimental/DListModule.htm",
+        "docs/FSharpx.Collections.Experimental/DList`1.htm",
+        "docs/FSharpx.Collections.Experimental/DequeModule.htm",
+        "docs/FSharpx.Collections.Experimental/Deque`1.htm",
+        "docs/FSharpx.Collections.Experimental/Digit`1.htm",
+        "docs/FSharpx.Collections.Experimental/Exceptions.htm",
+        "docs/FSharpx.Collections.Experimental/Functions`1.htm",
+        "docs/FSharpx.Collections.Experimental/HeapPriorityQueue.htm",
+        "docs/FSharpx.Collections.Experimental/HoodMelvilleQueueModule.htm",
+        "docs/FSharpx.Collections.Experimental/HoodMelvilleQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/IDeque`1.htm",
+        "docs/FSharpx.Collections.Experimental/IHeap`1.htm",
+        "docs/FSharpx.Collections.Experimental/IHeap`2.htm",
+        "docs/FSharpx.Collections.Experimental/IPriorityQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/IQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/IRandomAccessList`1.htm",
+        "docs/FSharpx.Collections.Experimental/IVector`1.htm",
+        "docs/FSharpx.Collections.Experimental/ImplicitQueue.htm",
+        "docs/FSharpx.Collections.Experimental/ImplicitQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/IntMap.htm",
+        "docs/FSharpx.Collections.Experimental/IntMap`1.htm",
+        "docs/FSharpx.Collections.Experimental/Interfaces.htm",
+        "docs/FSharpx.Collections.Experimental/LazyListHelpr.htm",
+        "docs/FSharpx.Collections.Experimental/LeftistHeapModule.htm",
+        "docs/FSharpx.Collections.Experimental/LeftistHeap`1.htm",
+        "docs/FSharpx.Collections.Experimental/ListHelpr.htm",
+        "docs/FSharpx.Collections.Experimental/ListZipper.htm",
+        "docs/FSharpx.Collections.Experimental/ListZipper`1.htm",
+        "docs/FSharpx.Collections.Experimental/NonEmptyBootstrappedQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/PairingHeapModule.htm",
+        "docs/FSharpx.Collections.Experimental/PairingHeap`1.htm",
+        "docs/FSharpx.Collections.Experimental/PhysicistQueueModule.htm",
+        "docs/FSharpx.Collections.Experimental/PhysicistQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/RealTimeDeque.htm",
+        "docs/FSharpx.Collections.Experimental/RealTimeDeque`1.htm",
+        "docs/FSharpx.Collections.Experimental/RealTimeQueue.htm",
+        "docs/FSharpx.Collections.Experimental/RealTimeQueue`1.htm",
+        "docs/FSharpx.Collections.Experimental/ReturnException183c26a427ae489c8fd92ec21a0c9a59.htm",
+        "docs/FSharpx.Collections.Experimental/ReturnNoneException183c26a427ae489c8fd92ec21a0c9a59.htm",
+        "docs/FSharpx.Collections.Experimental/RingBuffer.htm",
+        "docs/FSharpx.Collections.Experimental/RingBuffer`1.htm",
+        "docs/FSharpx.Collections.Experimental/RoseTreeModule.htm",
+        "docs/FSharpx.Collections.Experimental/RoseTree`1.htm",
+        "docs/FSharpx.Collections.Experimental/RotationState`1.htm",
+        "docs/FSharpx.Collections.Experimental/SkewBinaryRandomAccessListModule.htm",
+        "docs/FSharpx.Collections.Experimental/SkewBinaryRandomAccessList`1.htm",
+        "docs/FSharpx.Collections.Experimental/Sortable`1.htm",
+        "docs/FSharpx.Collections.Experimental/Tags.htm",
+        "docs/FSharpx.Collections.Experimental/Timeseries`1.htm",
+        "docs/FSharpx.Collections.Experimental/TreeBRAL`1.htm",
+        "docs/FSharpx.Collections.Experimental/TreeDirection.htm",
+        "docs/FSharpx.Collections.Experimental/TreeSBRAL`1.htm",
+        "docs/FSharpx.Collections.Experimental/TreeZipperDirection.htm",
+        "docs/FSharpx.Collections.Experimental/Vector.htm",
+        "docs/FSharpx.Collections.Experimental/index.htm",
+        "docs/index.htm",
+        "docs/js/example.js",
+        "docs/js/jquery-1.3.2.min.js",
+        "docs/js/jquery.scrollTo-min.js",
+        "docs/js/navigation.js",
+        "docs/main.css",
+        "fsharpx.collections.experimental.1.7.3.nupkg.sha512",
+        "fsharpx.collections.experimental.nuspec",
+        "lib/40/FSharpx.Collections.Experimental.dll",
+        "lib/40/FSharpx.Collections.Experimental.pdb",
+        "lib/40/FSharpx.Collections.Experimental.xml",
+        "lib/portable-net4+sl4+wp71+win8/_._"
+      ]
+    },
+    "FSharpx.Core/1.7.3": {
+      "sha512": "1eYjFfp747MqsNGeJtyimmrn8NXmu+7hPGNfZG/m9EHJ5RXfwi26rG6Bz6tgdFpYTEng376L5c+Rr7lniqsNEg==",
+      "type": "package",
+      "path": "fsharpx.core/1.7.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "docs/FSharp.Control/AsyncExtensions.htm",
+        "docs/FSharp.Control/AsyncSeq.htm",
+        "docs/FSharp.Control/AsyncSeqBuilder.htm",
+        "docs/FSharp.Control/AsyncSeqExtensions.htm",
+        "docs/FSharp.Control/AsyncSeqInner`1.htm",
+        "docs/FSharp.Control/AutoCancelAgent`1.htm",
+        "docs/FSharp.Control/BatchProcessingAgent`1.htm",
+        "docs/FSharp.Control/BlockingQueueAgent`1.htm",
+        "docs/FSharp.Control/CircularQueueAgent`1.htm",
+        "docs/FSharp.Control/ConcurrentSetAgent`1.htm",
+        "docs/FSharp.Control/ISubject`2.htm",
+        "docs/FSharp.Control/Observable.htm",
+        "docs/FSharp.Control/ObservableExtensions.htm",
+        "docs/FSharp.Control/ObservableUpdate`1.htm",
+        "docs/FSharp.Control/ReplaySubject`1.htm",
+        "docs/FSharp.Control/Seq.htm",
+        "docs/FSharp.Control/SlidingWindowAgent`1.htm",
+        "docs/FSharp.Control/Subject`1.htm",
+        "docs/FSharp.Control/Tags.htm",
+        "docs/FSharp.Control/index.htm",
+        "docs/FSharp.IO/CircularStream.htm",
+        "docs/FSharp.IO/IOExtensions.htm",
+        "docs/FSharp.IO/index.htm",
+        "docs/FSharpx.Collections.Mutable/CircularBuffer`1.htm",
+        "docs/FSharpx.Collections.Mutable/index.htm",
+        "docs/FSharpx.Collections/ArrayModule.htm",
+        "docs/FSharpx.Collections/ByteString.htm",
+        "docs/FSharpx.Collections/ByteStringModule.htm",
+        "docs/FSharpx.Collections/DListModule.htm",
+        "docs/FSharpx.Collections/DList`1.htm",
+        "docs/FSharpx.Collections/DequeModule.htm",
+        "docs/FSharpx.Collections/Deque`1.htm",
+        "docs/FSharpx.Collections/DictionaryModule.htm",
+        "docs/FSharpx.Collections/HeapModule.htm",
+        "docs/FSharpx.Collections/Heap`1.htm",
+        "docs/FSharpx.Collections/IPriorityQueue.htm",
+        "docs/FSharpx.Collections/IPriorityQueue`1.htm",
+        "docs/FSharpx.Collections/LazyListModule.htm",
+        "docs/FSharpx.Collections/LazyList`1.htm",
+        "docs/FSharpx.Collections/List.htm",
+        "docs/FSharpx.Collections/Map.htm",
+        "docs/FSharpx.Collections/NameValueCollectionModule.htm",
+        "docs/FSharpx.Collections/NonEmptyList.htm",
+        "docs/FSharpx.Collections/NonEmptyListSemigroup`1.htm",
+        "docs/FSharpx.Collections/NonEmptyList`1.htm",
+        "docs/FSharpx.Collections/PriorityQueue.htm",
+        "docs/FSharpx.Collections/QueueModule.htm",
+        "docs/FSharpx.Collections/Queue`1.htm",
+        "docs/FSharpx.Collections/RandomAccessListModule.htm",
+        "docs/FSharpx.Collections/RandomAccessList`1.htm",
+        "docs/FSharpx.Collections/Seq.htm",
+        "docs/FSharpx.Collections/Set.htm",
+        "docs/FSharpx.Collections/VectorModule.htm",
+        "docs/FSharpx.Collections/Vector`1.htm",
+        "docs/FSharpx.Collections/index.htm",
+        "docs/FSharpx.Core/AssemblyInfo.htm",
+        "docs/FSharpx.Core/ReturnException183c26a427ae489c8fd92ec21a0c9a59.htm",
+        "docs/FSharpx.Core/ReturnNoneException183c26a427ae489c8fd92ec21a0c9a59.htm",
+        "docs/FSharpx.Core/index.htm",
+        "docs/FSharpx.DataStructures/AltBinRndAccList`1.htm",
+        "docs/FSharpx.DataStructures/AltBinaryRandomAccessListModule.htm",
+        "docs/FSharpx.DataStructures/BKTree.htm",
+        "docs/FSharpx.DataStructures/BKTree`1.htm",
+        "docs/FSharpx.DataStructures/BankersDequeModule.htm",
+        "docs/FSharpx.DataStructures/BankersDeque`1.htm",
+        "docs/FSharpx.DataStructures/BankersQueueModule.htm",
+        "docs/FSharpx.DataStructures/BankersQueue`1.htm",
+        "docs/FSharpx.DataStructures/BatchedDequeModule.htm",
+        "docs/FSharpx.DataStructures/BatchedDeque`1.htm",
+        "docs/FSharpx.DataStructures/BatchedQueueModule.htm",
+        "docs/FSharpx.DataStructures/BatchedQueue`1.htm",
+        "docs/FSharpx.DataStructures/BinaryRandomAccessListModule.htm",
+        "docs/FSharpx.DataStructures/BinaryRandomAccessList`1.htm",
+        "docs/FSharpx.DataStructures/BinaryTreeZipper.htm",
+        "docs/FSharpx.DataStructures/BinaryTreeZipper`1.htm",
+        "docs/FSharpx.DataStructures/BinaryTree`1.htm",
+        "docs/FSharpx.DataStructures/BinomialHeap.htm",
+        "docs/FSharpx.DataStructures/BinomialHeap`1.htm",
+        "docs/FSharpx.DataStructures/BinomialTree`1.htm",
+        "docs/FSharpx.DataStructures/BootstrappedQueue.htm",
+        "docs/FSharpx.DataStructures/BootstrappedQueue`1.htm",
+        "docs/FSharpx.DataStructures/BottomUpMergeSort.htm",
+        "docs/FSharpx.DataStructures/DListModule.htm",
+        "docs/FSharpx.DataStructures/DList`1.htm",
+        "docs/FSharpx.DataStructures/DequeModule.htm",
+        "docs/FSharpx.DataStructures/Deque`1.htm",
+        "docs/FSharpx.DataStructures/Digit`1.htm",
+        "docs/FSharpx.DataStructures/Exceptions.htm",
+        "docs/FSharpx.DataStructures/Functions`1.htm",
+        "docs/FSharpx.DataStructures/HeapPriorityQueue.htm",
+        "docs/FSharpx.DataStructures/HoodMelvilleQueueModule.htm",
+        "docs/FSharpx.DataStructures/HoodMelvilleQueue`1.htm",
+        "docs/FSharpx.DataStructures/IDeque`1.htm",
+        "docs/FSharpx.DataStructures/IHeap`1.htm",
+        "docs/FSharpx.DataStructures/IHeap`2.htm",
+        "docs/FSharpx.DataStructures/IPriorityQueue`1.htm",
+        "docs/FSharpx.DataStructures/IQueue`1.htm",
+        "docs/FSharpx.DataStructures/IRandomAccessList`1.htm",
+        "docs/FSharpx.DataStructures/IVector`1.htm",
+        "docs/FSharpx.DataStructures/ImplicitQueue.htm",
+        "docs/FSharpx.DataStructures/ImplicitQueue`1.htm",
+        "docs/FSharpx.DataStructures/IntMap.htm",
+        "docs/FSharpx.DataStructures/IntMap`1.htm",
+        "docs/FSharpx.DataStructures/Interfaces.htm",
+        "docs/FSharpx.DataStructures/LazyListHelpr.htm",
+        "docs/FSharpx.DataStructures/LeftistHeapModule.htm",
+        "docs/FSharpx.DataStructures/LeftistHeap`1.htm",
+        "docs/FSharpx.DataStructures/ListHelpr.htm",
+        "docs/FSharpx.DataStructures/ListZipper.htm",
+        "docs/FSharpx.DataStructures/ListZipper`1.htm",
+        "docs/FSharpx.DataStructures/NonEmptyBootstrappedQueue`1.htm",
+        "docs/FSharpx.DataStructures/PairingHeapModule.htm",
+        "docs/FSharpx.DataStructures/PairingHeap`1.htm",
+        "docs/FSharpx.DataStructures/PhysicistQueueModule.htm",
+        "docs/FSharpx.DataStructures/PhysicistQueue`1.htm",
+        "docs/FSharpx.DataStructures/RealTimeDeque.htm",
+        "docs/FSharpx.DataStructures/RealTimeDeque`1.htm",
+        "docs/FSharpx.DataStructures/RealTimeQueue.htm",
+        "docs/FSharpx.DataStructures/RealTimeQueue`1.htm",
+        "docs/FSharpx.DataStructures/RingBuffer.htm",
+        "docs/FSharpx.DataStructures/RingBuffer`1.htm",
+        "docs/FSharpx.DataStructures/RoseTreeModule.htm",
+        "docs/FSharpx.DataStructures/RoseTree`1.htm",
+        "docs/FSharpx.DataStructures/RotationState`1.htm",
+        "docs/FSharpx.DataStructures/SkewBinaryRandomAccessListModule.htm",
+        "docs/FSharpx.DataStructures/SkewBinaryRandomAccessList`1.htm",
+        "docs/FSharpx.DataStructures/Sortable`1.htm",
+        "docs/FSharpx.DataStructures/Tags.htm",
+        "docs/FSharpx.DataStructures/Timeseries`1.htm",
+        "docs/FSharpx.DataStructures/TreeBRAL`1.htm",
+        "docs/FSharpx.DataStructures/TreeDirection.htm",
+        "docs/FSharpx.DataStructures/TreeSBRAL`1.htm",
+        "docs/FSharpx.DataStructures/TreeZipperDirection.htm",
+        "docs/FSharpx.DataStructures/Vector.htm",
+        "docs/FSharpx.DataStructures/index.htm",
+        "docs/FSharpx.Linq/ActionHelper`10.htm",
+        "docs/FSharpx.Linq/ActionHelper`11.htm",
+        "docs/FSharpx.Linq/ActionHelper`12.htm",
+        "docs/FSharpx.Linq/ActionHelper`13.htm",
+        "docs/FSharpx.Linq/ActionHelper`14.htm",
+        "docs/FSharpx.Linq/ActionHelper`15.htm",
+        "docs/FSharpx.Linq/ActionHelper`16.htm",
+        "docs/FSharpx.Linq/ActionHelper`17.htm",
+        "docs/FSharpx.Linq/ActionHelper`18.htm",
+        "docs/FSharpx.Linq/ActionHelper`19.htm",
+        "docs/FSharpx.Linq/ActionHelper`20.htm",
+        "docs/FSharpx.Linq/ActionHelper`5.htm",
+        "docs/FSharpx.Linq/ActionHelper`6.htm",
+        "docs/FSharpx.Linq/ActionHelper`7.htm",
+        "docs/FSharpx.Linq/ActionHelper`8.htm",
+        "docs/FSharpx.Linq/ActionHelper`9.htm",
+        "docs/FSharpx.Linq/ExtraHashCompare.htm",
+        "docs/FSharpx.Linq/FuncHelper`10.htm",
+        "docs/FSharpx.Linq/FuncHelper`11.htm",
+        "docs/FSharpx.Linq/FuncHelper`12.htm",
+        "docs/FSharpx.Linq/FuncHelper`13.htm",
+        "docs/FSharpx.Linq/FuncHelper`14.htm",
+        "docs/FSharpx.Linq/FuncHelper`15.htm",
+        "docs/FSharpx.Linq/FuncHelper`16.htm",
+        "docs/FSharpx.Linq/FuncHelper`17.htm",
+        "docs/FSharpx.Linq/FuncHelper`18.htm",
+        "docs/FSharpx.Linq/FuncHelper`19.htm",
+        "docs/FSharpx.Linq/FuncHelper`20.htm",
+        "docs/FSharpx.Linq/FuncHelper`21.htm",
+        "docs/FSharpx.Linq/FuncHelper`6.htm",
+        "docs/FSharpx.Linq/FuncHelper`7.htm",
+        "docs/FSharpx.Linq/FuncHelper`8.htm",
+        "docs/FSharpx.Linq/FuncHelper`9.htm",
+        "docs/FSharpx.Linq/HelperTypes.htm",
+        "docs/FSharpx.Linq/QuotationEvaluation.htm",
+        "docs/FSharpx.Linq/QuotationEvaluator.htm",
+        "docs/FSharpx.Linq/QuotationHelpers.htm",
+        "docs/FSharpx.Linq/index.htm",
+        "docs/FSharpx/ActiveMatch.htm",
+        "docs/FSharpx/ArrayQueue.htm",
+        "docs/FSharpx/Async.htm",
+        "docs/FSharpx/BinaryModule.htm",
+        "docs/FSharpx/Boolean.htm",
+        "docs/FSharpx/Choice.htm",
+        "docs/FSharpx/Compiled.htm",
+        "docs/FSharpx/ContinuationBuilder.htm",
+        "docs/FSharpx/ContinuationModule.htm",
+        "docs/FSharpx/Core.htm",
+        "docs/FSharpx/Coroutine.htm",
+        "docs/FSharpx/CustomValidation`1.htm",
+        "docs/FSharpx/DGML.htm",
+        "docs/FSharpx/DGMLClass.htm",
+        "docs/FSharpx/Date.htm",
+        "docs/FSharpx/Dictionary.htm",
+        "docs/FSharpx/DocumentExtensions.htm",
+        "docs/FSharpx/EitherBuilder.htm",
+        "docs/FSharpx/EnumerableBuilder.htm",
+        "docs/FSharpx/EnumerableEx.htm",
+        "docs/FSharpx/Enumerator.htm",
+        "docs/FSharpx/FSharpAsyncEx.htm",
+        "docs/FSharpx/FSharpChoice.htm",
+        "docs/FSharpx/FSharpFunc.htm",
+        "docs/FSharpx/FSharpLazy.htm",
+        "docs/FSharpx/FSharpList.htm",
+        "docs/FSharpx/FSharpMap.htm",
+        "docs/FSharpx/FSharpOption.htm",
+        "docs/FSharpx/FSharpSet.htm",
+        "docs/FSharpx/Funcs.htm",
+        "docs/FSharpx/History`1.htm",
+        "docs/FSharpx/IDocument.htm",
+        "docs/FSharpx/IO.htm",
+        "docs/FSharpx/ISemigroup`1.htm",
+        "docs/FSharpx/IState.htm",
+        "docs/FSharpx/Interpreted.htm",
+        "docs/FSharpx/IterateeBuilder.htm",
+        "docs/FSharpx/IterateeModule.htm",
+        "docs/FSharpx/Iteratee`2.htm",
+        "docs/FSharpx/JArray.htm",
+        "docs/FSharpx/JObject.htm",
+        "docs/FSharpx/JSON.htm",
+        "docs/FSharpx/JSONNull.htm",
+        "docs/FSharpx/L.htm",
+        "docs/FSharpx/LazyModule.htm",
+        "docs/FSharpx/LensModule.htm",
+        "docs/FSharpx/Lens`2.htm",
+        "docs/FSharpx/ListModule.htm",
+        "docs/FSharpx/ListQueue.htm",
+        "docs/FSharpx/MaybeBuilder.htm",
+        "docs/FSharpx/Monoid.htm",
+        "docs/FSharpx/Monoid`1.htm",
+        "docs/FSharpx/Node.htm",
+        "docs/FSharpx/Node`1.htm",
+        "docs/FSharpx/NonEmptyListEx.htm",
+        "docs/FSharpx/NonEmptyListValidation`1.htm",
+        "docs/FSharpx/Nullable.htm",
+        "docs/FSharpx/Number.htm",
+        "docs/FSharpx/Operators.htm",
+        "docs/FSharpx/Option.htm",
+        "docs/FSharpx/Prelude.htm",
+        "docs/FSharpx/Queue`1.htm",
+        "docs/FSharpx/Reader.htm",
+        "docs/FSharpx/ReaderBuilder.htm",
+        "docs/FSharpx/RegexModule.htm",
+        "docs/FSharpx/Result`1.htm",
+        "docs/FSharpx/RoseTree.htm",
+        "docs/FSharpx/Semigroup.htm",
+        "docs/FSharpx/State.htm",
+        "docs/FSharpx/StateBuilder.htm",
+        "docs/FSharpx/StateMachine.htm",
+        "docs/FSharpx/StateOperators.htm",
+        "docs/FSharpx/Stm.htm",
+        "docs/FSharpx/StmBuilder.htm",
+        "docs/FSharpx/Stream`1.htm",
+        "docs/FSharpx/Strings.htm",
+        "docs/FSharpx/TLog.htm",
+        "docs/FSharpx/TVar.htm",
+        "docs/FSharpx/TVar`1.htm",
+        "docs/FSharpx/Tags.htm",
+        "docs/FSharpx/Task.htm",
+        "docs/FSharpx/TaskBuilder.htm",
+        "docs/FSharpx/Text.htm",
+        "docs/FSharpx/TimeMeasurement.htm",
+        "docs/FSharpx/Token.htm",
+        "docs/FSharpx/Undo.htm",
+        "docs/FSharpx/Validation.htm",
+        "docs/FSharpx/Writer.htm",
+        "docs/FSharpx/WriterBuilder`1.htm",
+        "docs/FSharpx/ZipList.htm",
+        "docs/FSharpx/index.htm",
+        "docs/Microsoft.FSharp.Collections/ResizeArrayModule.htm",
+        "docs/Microsoft.FSharp.Collections/index.htm",
+        "docs/Microsoft.FSharp.Control/AsyncResultCell`1.htm",
+        "docs/Microsoft.FSharp.Control/AsyncResult`1.htm",
+        "docs/Microsoft.FSharp.Control/AsyncStreamReader.htm",
+        "docs/Microsoft.FSharp.Control/AsyncWorker`1.htm",
+        "docs/Microsoft.FSharp.Control/FileExtensions.htm",
+        "docs/Microsoft.FSharp.Control/StreamReaderExtensions.htm",
+        "docs/Microsoft.FSharp.Control/Tags.htm",
+        "docs/Microsoft.FSharp.Control/WebClientExtensions.htm",
+        "docs/Microsoft.FSharp.Control/WebRequestExtensions.htm",
+        "docs/Microsoft.FSharp.Control/index.htm",
+        "docs/index.htm",
+        "docs/js/example.js",
+        "docs/js/jquery-1.3.2.min.js",
+        "docs/js/jquery.scrollTo-min.js",
+        "docs/js/navigation.js",
+        "docs/main.css",
+        "fsharpx.core.1.7.3.nupkg.sha512",
+        "fsharpx.core.nuspec",
+        "lib/40/FSharpx.Core.dll",
+        "lib/40/FSharpx.Core.pdb",
+        "lib/40/FSharpx.Core.xml",
+        "lib/portable-net4+sl4+wp71+win8/_._"
+      ]
+    },
     "Microsoft.Win32.SystemEvents/6.0.0": {
       "sha512": "hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
       "type": "package",
@@ -112,52 +798,6 @@
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.dll",
         "runtimes/win/lib/netcoreapp3.1/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt"
-      ]
-    },
-    "QuikGraph/2.5.0": {
-      "sha512": "sG+mrPpXwxlXknRK5VqWUGiOmDACa9X+3ftlkQIMgOZUqxVOQSe0+HIU9PTjwqazy0pqSf8MPDXYFGl0GYWcKw==",
-      "type": "package",
-      "path": "quikgraph/2.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "lib/net35/QuikGraph.dll",
-        "lib/net35/QuikGraph.xml",
-        "lib/net40/QuikGraph.dll",
-        "lib/net40/QuikGraph.xml",
-        "lib/net45/QuikGraph.dll",
-        "lib/net45/QuikGraph.xml",
-        "lib/netstandard1.3/QuikGraph.dll",
-        "lib/netstandard1.3/QuikGraph.xml",
-        "lib/netstandard2.0/QuikGraph.dll",
-        "lib/netstandard2.0/QuikGraph.xml",
-        "quikgraph.2.5.0.nupkg.sha512",
-        "quikgraph.nuspec",
-        "quikgraph_logo.png"
-      ]
-    },
-    "QuikGraph.Graphviz/2.5.0": {
-      "sha512": "pCKpErtHGxUi72OT+2aIg1pdHdUqpqEM5J/i9rmVsEVDE4X0xb1HBPWdxv/FLZmbBjk0ZogZXZttUL3CnAPpNw==",
-      "type": "package",
-      "path": "quikgraph.graphviz/2.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE",
-        "lib/net35/QuikGraph.Graphviz.dll",
-        "lib/net35/QuikGraph.Graphviz.xml",
-        "lib/net40/QuikGraph.Graphviz.dll",
-        "lib/net40/QuikGraph.Graphviz.xml",
-        "lib/net45/QuikGraph.Graphviz.dll",
-        "lib/net45/QuikGraph.Graphviz.xml",
-        "lib/netstandard1.3/QuikGraph.Graphviz.dll",
-        "lib/netstandard1.3/QuikGraph.Graphviz.xml",
-        "lib/netstandard2.0/QuikGraph.Graphviz.dll",
-        "lib/netstandard2.0/QuikGraph.Graphviz.xml",
-        "quikgraph.graphviz.2.5.0.nupkg.sha512",
-        "quikgraph.graphviz.nuspec",
-        "quikgraph_logo.png"
       ]
     },
     "System.Drawing.Common/6.0.0": {
@@ -198,34 +838,55 @@
         "system.drawing.common.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "YC.QuickGraph/3.7.4": {
+      "sha512": "iURC63gD7noQ2ICJT+MghH+06P9gN1zSMwAhNlDC9ABLx9p9NH69eMJlvlfSijJquKKXqRkZCfDbrS2CXboPYg==",
+      "type": "package",
+      "path": "yc.quickgraph/3.7.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/YC.QuickGraph.Data.dll",
+        "lib/net45/YC.QuickGraph.FSA.dll",
+        "lib/net45/YC.QuickGraph.FST.dll",
+        "lib/net45/YC.QuickGraph.Glee.dll",
+        "lib/net45/YC.QuickGraph.Graphviz.dll",
+        "lib/net45/YC.QuickGraph.Petri.dll",
+        "lib/net45/YC.QuickGraph.dll",
+        "lib/net45/YC.QuickGraph.xml",
+        "lib/net45/YC.QuickGraphFS.dll",
+        "yc.quickgraph.3.7.4.nupkg.sha512",
+        "yc.quickgraph.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "QuikGraph >= 2.5.0",
-      "QuikGraph.Graphviz >= 2.5.0",
-      "System.Drawing.Common >= 6.0.0"
+      "System.Drawing.Common >= 6.0.0",
+      "YC.QuickGraph >= 3.7.4"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\v.nichnikov\\.nuget\\packages\\": {}
+    "C:\\Users\\vnich\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
+      "projectUniqueName": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
       "projectName": "PracticalTask1",
-      "projectPath": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
-      "packagesPath": "C:\\Users\\v.nichnikov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\obj\\",
+      "projectPath": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
+      "packagesPath": "C:\\Users\\vnich\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\v.nichnikov\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\vnich\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -244,17 +905,13 @@
       "net5.0": {
         "targetAlias": "net5.0",
         "dependencies": {
-          "QuikGraph": {
-            "target": "Package",
-            "version": "[2.5.0, )"
-          },
-          "QuikGraph.Graphviz": {
-            "target": "Package",
-            "version": "[2.5.0, )"
-          },
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[6.0.0, )"
+          },
+          "YC.QuickGraph": {
+            "target": "Package",
+            "version": "[3.7.4, )"
           }
         },
         "imports": [
@@ -267,13 +924,113 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.17, 5.0.17]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "YC.QuickGraph 3.7.4 depends on DotNet.Contracts (>= 0.0.0) but DotNet.Contracts 0.0.0 was not found. An approximate best match of DotNet.Contracts 1.10.10126.1 was resolved.",
+      "libraryId": "DotNet.Contracts",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "YC.QuickGraph 3.7.4 depends on FSharp.Core (>= 0.0.0) but FSharp.Core 0.0.0 was not found. An approximate best match of FSharp.Core 2.0.0 was resolved.",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1602",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "DotParser 1.0.6 does not provide an inclusive lower bound for dependency FSharpx.Collections.Experimental. An approximate best match of FSharpx.Collections.Experimental 1.7.3 was resolved.",
+      "libraryId": "FSharpx.Collections.Experimental",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DotParser 1.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DotParser",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharp.Core 2.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharp.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharpx.Collections.Experimental 1.7.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharpx.Collections.Experimental",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'FSharpx.Core 1.7.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "FSharpx.Core",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'YC.QuickGraph 3.7.4' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "YC.QuickGraph",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

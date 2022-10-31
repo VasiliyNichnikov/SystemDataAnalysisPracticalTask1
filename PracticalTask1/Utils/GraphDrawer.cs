@@ -20,23 +20,26 @@ namespace PracticalTask1.Utils
             _dfsEmployee = new DeepFindSearchGraph<EmployeeBase>();
             _staff = staff;
             _departments = departments;
-            // var edges = dfsEmployee.TranslateToEdgesForGraphWithDepartments(departments as IReadOnlyList<DepartmentBase>);
         }
 
-        public void Draw(TypeSearch type)
+        public void Draw(TypeSearch type, string nameGraphFile="graph")
         {
-            // todo тут проблема, что у нас обязательно 4 элемент должен быть главным в графе
+            foreach (var employee in _staff)
+            {
+                employee.Excluded = true;
+            }
             
-            // todo имеено тут работники лишаются отдела
             var nodes = _dfsEmployee.FoundAllNodes(_staff[4],new List<EmployeeBase>(), type);
-
+            
+            if (nodes == null || nodes.Count == 0)
+            {
+                Console.WriteLine("Ошибка! Не удалось найти сотрудников подходящих под заданные условия(");
+                return;
+            }
+            
             var edges = new List<Edge<Vertex>>();
-
-            Console.WriteLine("Found users:");
             foreach (var node in nodes)
             {
-                Console.WriteLine($"Name: {node.Name}. Type: {node.GetType()}");
-                
                 var elements = _dfsEmployee.TranslateToEdgesForGraphWithStartDepartment(node, _departments);
                 edges.AddRange(elements);
             }
@@ -44,7 +47,7 @@ namespace PracticalTask1.Utils
             var graph = edges.ToAdjacencyGraph<Vertex, Edge<Vertex>>();
             var algo = new GraphvizAlgorithm<Vertex, Edge<Vertex>>(graph)
             {
-                ImageType = GraphvizImageType.Gd2
+                ImageType = GraphvizImageType.Jpeg
             };
             algo.FormatVertex += (sender, eventArgs) =>
             {
@@ -61,7 +64,7 @@ namespace PracticalTask1.Utils
             {
                 string graphVizString = readText.ReadToEnd();
                 Bitmap bm = MyFileDotEngine.Run(graphVizString);
-                bm.Save(PathHandler.GetPathImage("GraphImage"));
+                bm.Save(PathHandler.GetPathImage(nameGraphFile));
             }
         }
         

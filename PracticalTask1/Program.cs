@@ -1,73 +1,92 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.IO;
 using PracticalTask1.Algorithms;
 using PracticalTask1.Utils;
-using QuickGraph;
-using QuickGraph.Algorithms.Search;
-using QuickGraph.Graphviz;
-using QuickGraph.Graphviz.Dot;
 
 namespace PracticalTask1
 {
-    class Program
+    static class Program
     {
+        /// <summary>
+        /// Нулевой пример
+        /// Исключит сотрудника с именим "Марк" и фамилией "Осипов" и возврастом 54
+        /// </summary>
+        /// <param name="drawer"></param>
+        /// <param name="requestCollector"></param>
+        private static void Example0(GraphDrawer drawer, RequestCollector requestCollector)
+        {
+            requestCollector.ClearSearch();
+            requestCollector.AddName("Марк").AddSurname("Осипов").AddAge(54);
+
+            drawer.Draw(TypeSearch.Missing, "example0");
+        }
+        
+        
+        /// <summary>
+        /// Первый пример
+        /// Найдет всех пользователей у которых в фамилии присутсвует слово "Орлов"
+        /// </summary>
+        /// <param name="drawer"></param>
+        /// <param name="requestCollector"></param>
+        private static void Example1(GraphDrawer drawer, RequestCollector requestCollector)
+        {
+            requestCollector.ClearSearch();
+            requestCollector.AddSurname("Орлов");
+
+            drawer.Draw(TypeSearch.InPresent, "example1");
+        }
+
+        /// <summary>
+        /// Второй пример
+        /// Найдет пользователей у которых точно будет в имени "Марк"
+        /// И ЗП равная 200тыс.
+        /// </summary>
+        /// <param name="drawer"></param>
+        /// <param name="requestCollector"></param>
+        private static void Example2(GraphDrawer drawer, RequestCollector requestCollector)
+        {
+            requestCollector.ClearSearch();
+            requestCollector.AddName("Марк").AddSalary(200);
+            
+            drawer.Draw(TypeSearch.Equal, "example2");
+        }
+
+        /// <summary>
+        /// Пятый вариант
+        /// В данном варианте указаны несуществующие данные
+        /// Поэтому в качестве ответа будет информация о том, что не удалось найти сотрудников 
+        /// </summary>
+        /// <param name="drawer"></param>
+        /// <param name="requestCollector"></param>
+        private static void Example3(GraphDrawer drawer, RequestCollector requestCollector)
+        {
+            requestCollector.ClearSearch();
+            requestCollector.AddName("Руслан").AddMiddleName("Никитична");
+            
+            drawer.Draw(TypeSearch.Equal, "example3");
+        }
+        
         static void Main(string[] args)
         {
             var departments = TranslationToObjectsFromJson.Departments as IReadOnlyList<DepartmentBase>;
             var staff = TranslationToObjectsFromJson.Staff as IReadOnlyList<EmployeeBase>;
 
-            var dfsEmployee = new DeepFindSearchGraph<EmployeeBase>();
-            
-            EmployeeBase.SelectSearchField("_name", "Дарья");
-            
-            var nodes = dfsEmployee.FoundAllNodes(staff[4],new List<EmployeeBase>(), TypeSearch.Equal);
-            
-            Console.WriteLine();
-            if (nodes.Count == 0)
+            if (departments == null || staff == null)
             {
-                Console.WriteLine("Not found data");
+                Console.WriteLine("Ошибка. Не получается получить отделы или сотрудников");
+                return;
             }
-            else
-            {
-                foreach (var node in nodes)
-                {
-                    Console.WriteLine($"Name: {node.Name}\nSurname: {node.Surname}\nMiddle name: {node.MiddleName}");
-                }
-            }
+            
+            var drawer = new GraphDrawer(staff, departments);
+            var request = new RequestCollector();
 
+            Example0(drawer, request); // работает
             Console.WriteLine();
-
-            // todo вершины выбранного пользователя
-            var edges = dfsEmployee.TranslateToEdgesForGraphWithStartDepartment(staff[4], departments);
-
-            // var edges = dfsEmployee.TranslateToEdgesForGraphWithDepartments(departments as IReadOnlyList<DepartmentBase>);
-            
-            var graph = edges.ToAdjacencyGraph<Vertex, Edge<Vertex>>();
-            var algo = new GraphvizAlgorithm<Vertex, Edge<Vertex>>(graph)
-            {
-                ImageType = GraphvizImageType.Gd2
-            };
-            algo.FormatVertex += (sender, eventArgs) =>
-            {
-                if (eventArgs.Vertex is Vertex v)
-                {
-                    eventArgs.VertexFormatter.Label = v.Name;
-                    eventArgs.VertexFormatter.StrokeColor = v.StrokeColor;
-                }
-            };
-            
-            var pathDot = PathHandler.GetGraphDotPath();
-            algo.Generate(new FileDotEngine(), pathDot);
-            
-            // Сохранение в Png
-            // using(StreamReader readText = new StreamReader(pathDot))
-            // {
-            //     string graphVizString = readText.ReadToEnd();
-            //     Bitmap bm = MyFileDotEngine.Run(graphVizString);
-            //     bm.Save(PathHandler.GetPathImage("GraphImage"));
-            // }
+            Example1(drawer, request); // работает
+            Console.WriteLine();
+            Example2(drawer, request); // работает
+            Console.WriteLine();
+            Example3(drawer, request);  // работает
         }
     }
 }

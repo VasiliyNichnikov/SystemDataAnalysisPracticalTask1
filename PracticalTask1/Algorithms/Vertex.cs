@@ -12,5 +12,20 @@ namespace PracticalTask1.Algorithms
             StrokeColor = strokeColor;
             Name = name;
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Vertex v)
+            {
+                return GetHashCode() == obj.GetHashCode();
+            }
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
     }
 }

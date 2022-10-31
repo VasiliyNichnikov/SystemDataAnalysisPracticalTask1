@@ -1,8 +1,8 @@
 ﻿namespace PracticalTask1
 {
-    public class ClientProgrammer : EmployeeBase
+    public class DeveloperProgrammer : EmployeeBase
     {
-        public ClientProgrammer(
+        public DeveloperProgrammer(
             string name,
             string surname,
             string middleName,

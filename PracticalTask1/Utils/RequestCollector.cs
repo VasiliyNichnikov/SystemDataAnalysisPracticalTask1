@@ -27,6 +27,18 @@
         }
 
         /// <summary>
+        /// Добавляет отчество в поиск
+        /// </summary>
+        /// <param name="middleName"></param>
+        /// <returns></returns>
+        public RequestCollector AddMiddleName(string middleName)
+        {
+            EmployeeBase.SelectSearchField("_middleName", middleName);
+
+            return this;
+        }
+
+        /// <summary>
         /// Добавление возвраста в поиск
         /// </summary>
         /// <param name="age"></param>

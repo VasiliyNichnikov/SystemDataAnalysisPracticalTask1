@@ -6,6 +6,7 @@ namespace PracticalTask1.Algorithms
     {
         T Data { get; }
         bool Visited { get; set; }
+        bool Excluded { get; set; }
         IReadOnlyList<INode<T>> Neighbors { get; }
         bool CheckVerbatim(TypeSearch type);
         Vertex ConvertToVertex();

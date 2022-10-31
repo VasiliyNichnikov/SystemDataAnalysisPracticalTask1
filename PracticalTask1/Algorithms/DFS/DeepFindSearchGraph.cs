@@ -38,12 +38,12 @@ namespace PracticalTask1.Algorithms
         /// Получение вершин со всеми отделами
         /// </summary>
         /// <returns></returns>
-        public IReadOnlyList<Edge<string>> TranslateToEdgesForGraphWithDepartments(
+        public IReadOnlyList<Edge<Vertex>> TranslateToEdgesForGraphWithDepartments(
             IReadOnlyList<DepartmentBase> departments)
         {
             _cacheConnections.Clear();
 
-            return TranslateToEdgesForGraph(departments, new List<Edge<string>>());
+            return TranslateToEdgesForGraph(departments, new List<Edge<Vertex>>());
         }
 
         /// <summary>
@@ -76,29 +76,25 @@ namespace PracticalTask1.Algorithms
         /// </summary>
         /// <param name="startNode"></param>
         /// <returns></returns>
-        public IReadOnlyList<Edge<string>> TranslateToEdgesForGraphWithoutDepartments(
+        public IReadOnlyList<Edge<Vertex>> TranslateToEdgesForGraphWithoutDepartments(
             INode<T> startNode)
         {
             _cacheConnections.Clear();
 
-            return null;
-            // todo нужно доработать
-            // return TranslateToEdgesForGraph(startNode, new List<Edge<string>>());
+            return TranslateToEdgesForGraph(startNode, new List<Edge<Vertex>>());;
         }
         
-        // todo нужно доработать 
-        private IReadOnlyList<Edge<string>> TranslateToEdgesForGraph(
+        private IReadOnlyList<Edge<Vertex>> TranslateToEdgesForGraph(
             IReadOnlyList<DepartmentBase> departments,
-            List<Edge<string>> createdEdges)
+            List<Edge<Vertex>> createdEdges)
         {
             foreach (var department in departments)
             {
-                var nameDepartmentCurrent = department.ToString();
                 foreach (var employee in department.Staff)
                 {
-                    var nameEmployeeCurrent = employee.ToString();
-                    createdEdges.Add(new Edge<string>(nameDepartmentCurrent, nameEmployeeCurrent));
-                    // TranslateToEdgesForGraph(employee as INode<T>, createdEdges);
+                    createdEdges.Add(new Edge<Vertex>(department.ConvertToVertex(), employee.ConvertToVertex()));
+
+                    TranslateToEdgesForGraph(employee as INode<T>, createdEdges);
                 }
             }
 
@@ -112,6 +108,12 @@ namespace PracticalTask1.Algorithms
             var nameEdgePreview = startNode.ConvertToVertex();
             foreach (var neighbor in startNode.Neighbors)
             {
+                // Если исключен - пропускаем
+                if (neighbor.Excluded)
+                {
+                    continue;
+                }
+                
                 var nameEdgeCurrent = neighbor.ConvertToVertex();
                 var connection = new Connection
                 {
@@ -152,6 +154,7 @@ namespace PracticalTask1.Algorithms
 
             if (currentNode.CheckVerbatim(type))
             {
+                currentNode.Excluded = false;
                 matchesFound.Add(currentNode.Data);
             }
             

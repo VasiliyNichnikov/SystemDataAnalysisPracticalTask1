@@ -43,7 +43,7 @@ namespace PracticalTask1
     {
         public override EmployeeBase Create()
         {
-            var createdEmployee = new ClientProgrammer(
+            var createdEmployee = new DeveloperProgrammer(
                 DataBase.Name,
                 DataBase.Surname,
                 DataBase.MiddleName,
@@ -172,7 +172,7 @@ namespace PracticalTask1
         private static readonly IDictionary<TypeDepartment, ICreatorEmployee> _creator =
             new Dictionary<TypeDepartment, ICreatorEmployee>()
             {
-                { TypeDepartment.ClientProgrammer, new ClientProgrammerCreator() },
+                { TypeDepartment.DeveloperProgrammer, new ClientProgrammerCreator() },
                 { TypeDepartment.Artist, new ArtistCreator() },
                 { TypeDepartment.MarketingSpecialist, new MarketingSpecialistCreator() },
                 { TypeDepartment.Tester, new TesterCreator() },

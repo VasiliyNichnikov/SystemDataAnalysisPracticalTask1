@@ -18,8 +18,8 @@ namespace PracticalTask1.Utils
             _cacheStaff = new Dictionary<int, EmployeeBase>();
 
             CreateAllStaff();
-            LinkSubordinates();
             CreateAllDepartments();
+            LinkSubordinates();
 
             Departments = TranslateDictionaryToList(_cacheDepartments);
             Staff = TranslateDictionaryToList(_cacheStaff);

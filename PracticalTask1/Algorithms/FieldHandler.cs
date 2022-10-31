@@ -192,5 +192,10 @@ namespace PracticalTask1.Algorithms
 
             throw new Exception(); // todo отфильтровать ошибку
         }
+
+        public void ClearSearch()
+        {
+            _searchData.Clear();
+        }
     }
 }

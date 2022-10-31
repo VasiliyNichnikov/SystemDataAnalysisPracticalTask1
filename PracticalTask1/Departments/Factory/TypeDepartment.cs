@@ -3,7 +3,7 @@
     public enum TypeDepartment
     {
         MarketingSpecialist = 0,
-        ClientProgrammer = 1,
+        DeveloperProgrammer = 1,
         Tester = 2,
         Artist = 3,
         None = 4

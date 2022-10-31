@@ -74,7 +74,7 @@ namespace PracticalTask1
         private static readonly IDictionary<TypeDepartment, ICreatorDepartment> _creator = new Dictionary<TypeDepartment, ICreatorDepartment>()
         {
             { TypeDepartment.MarketingSpecialist, new MarketingDepartmentCreator() },
-            { TypeDepartment.ClientProgrammer, new DevelopmentDepartmentCreator() },
+            { TypeDepartment.DeveloperProgrammer, new DevelopmentDepartmentCreator() },
             { TypeDepartment.Tester, new TestingDepartmentCreator()},
             { TypeDepartment.Artist, new DesignDepartmentCreator()}
         };

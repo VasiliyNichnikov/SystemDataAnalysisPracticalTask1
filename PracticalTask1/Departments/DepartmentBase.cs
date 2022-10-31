@@ -8,6 +8,7 @@ namespace PracticalTask1
     {
         public DepartmentBase Data => this;
         public bool Visited { get; set; }
+        public bool Excluded { get; set; }
         public IReadOnlyList<INode<DepartmentBase>> Neighbors => null;
         public string Name => _name;
         public IReadOnlyList<EmployeeBase> Staff => (IReadOnlyList<EmployeeBase>)_staff;

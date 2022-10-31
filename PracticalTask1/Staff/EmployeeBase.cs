@@ -9,6 +9,7 @@ namespace PracticalTask1
     {
         public EmployeeBase Data => this;
         public bool Visited { get; set; }
+        public bool Excluded { get; set; }
         public IReadOnlyList<INode<EmployeeBase>> Neighbors => Subordinates;
         public string Name => _name;
         public string Surname => _surname;
@@ -108,7 +109,12 @@ namespace PracticalTask1
         {
             _fieldHandler.SelectSearchField(fieldName, searchValue);
         }
-
+        
+        public static void ClearSearch()
+        {
+            _fieldHandler.ClearSearch();
+        }
+        
         /// <summary>
         /// Дословная проверка, когда мы убеждаемся чтобы значения совпадали в точности
         /// todo Для строк нужно проверка на не точное совпадение

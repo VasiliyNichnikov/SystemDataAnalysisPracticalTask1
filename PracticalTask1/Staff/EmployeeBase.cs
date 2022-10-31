@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using PracticalTask1.Algorithms;
 
 namespace PracticalTask1
@@ -131,6 +132,11 @@ namespace PracticalTask1
         public override string ToString()
         {
             return $"<{_name}-{_surname}-{_middleName}-{_age}>";
+        }
+        
+        public Vertex ConvertToVertex()
+        {
+            return new Vertex(ToString(), Color.Coral);
         }
     }
 }

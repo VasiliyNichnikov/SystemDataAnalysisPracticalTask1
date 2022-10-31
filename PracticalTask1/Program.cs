@@ -40,29 +40,34 @@ namespace PracticalTask1
             Console.WriteLine();
 
             // todo вершины выбранного пользователя
-            var edges = dfsEmployee.TranslateToEdgesForGraphWithStartDepartment(staff[1], departments);
+            var edges = dfsEmployee.TranslateToEdgesForGraphWithStartDepartment(staff[4], departments);
 
             // var edges = dfsEmployee.TranslateToEdgesForGraphWithDepartments(departments as IReadOnlyList<DepartmentBase>);
             
-            var graph = edges.ToAdjacencyGraph<string, Edge<string>>();
-            var algo = new GraphvizAlgorithm<string, Edge<string>>(graph)
+            var graph = edges.ToAdjacencyGraph<Vertex, Edge<Vertex>>();
+            var algo = new GraphvizAlgorithm<Vertex, Edge<Vertex>>(graph)
             {
                 ImageType = GraphvizImageType.Gd2
             };
             algo.FormatVertex += (sender, eventArgs) =>
             {
-                eventArgs.VertexFormatter.Label = eventArgs.Vertex.ToString();
+                if (eventArgs.Vertex is Vertex v)
+                {
+                    eventArgs.VertexFormatter.Label = v.Name;
+                    eventArgs.VertexFormatter.StrokeColor = v.StrokeColor;
+                }
             };
             
             var pathDot = PathHandler.GetGraphDotPath();
             algo.Generate(new FileDotEngine(), pathDot);
             
-            using(StreamReader readText = new StreamReader(pathDot))
-            {
-                string graphVizString = readText.ReadToEnd();
-                Bitmap bm = MyFileDotEngine.Run(graphVizString);
-                bm.Save(PathHandler.GetPathImage("GraphImage"));
-            }
+            // Сохранение в Png
+            // using(StreamReader readText = new StreamReader(pathDot))
+            // {
+            //     string graphVizString = readText.ReadToEnd();
+            //     Bitmap bm = MyFileDotEngine.Run(graphVizString);
+            //     bm.Save(PathHandler.GetPathImage("GraphImage"));
+            // }
         }
     }
 }

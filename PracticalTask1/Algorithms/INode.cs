@@ -2,11 +2,12 @@
 
 namespace PracticalTask1.Algorithms
 {
-    public interface INode<T>
+    public interface INode<out T> where T: class
     {
         T Data { get; }
         bool Visited { get; set; }
         IReadOnlyList<INode<T>> Neighbors { get; }
         bool CheckVerbatim(TypeSearch type);
+        Vertex ConvertToVertex();
     }
 }

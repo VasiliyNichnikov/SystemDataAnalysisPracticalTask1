@@ -12,8 +12,8 @@ namespace PracticalTask1.Algorithms
     {
         private struct Connection
         {
-            public string Preview { get; set; }
-            public string Current { get; set; }
+                public Vertex Preview { get; set; }
+            public Vertex Current { get; set; }
             
             public override bool Equals(object obj)
             {
@@ -33,7 +33,7 @@ namespace PracticalTask1.Algorithms
         
         
         private readonly List<Connection> _cacheConnections = new();
-        
+
         /// <summary>
         /// Получение вершин со всеми отделами
         /// </summary>
@@ -52,20 +52,18 @@ namespace PracticalTask1.Algorithms
         /// <param name="startNode"></param>
         /// <param name="departments"></param>
         /// <returns></returns>
-        public IReadOnlyList<Edge<string>> TranslateToEdgesForGraphWithStartDepartment(
+        public IReadOnlyList<Edge<Vertex>> TranslateToEdgesForGraphWithStartDepartment(
             INode<EmployeeBase> startNode,
             IReadOnlyList<DepartmentBase> departments)
         {
             _cacheConnections.Clear();
-
-            var createdEdges = new List<Edge<string>>();
+            
+            var createdEdges = new List<Edge<Vertex>>();
             foreach (var department in departments)
             {
                 if (startNode.Data.CheckDepartment(department))
                 {
-                    var nameDepartmentCurrent = department.ToString();
-                    var nameEmployeeCurrent = startNode.Data.ToString();
-                    createdEdges.Add(new Edge<string>(nameDepartmentCurrent, nameEmployeeCurrent));
+                    createdEdges.Add(new Edge<Vertex>(department.ConvertToVertex(), startNode.ConvertToVertex()));
                     break;
                 }
             }
@@ -83,9 +81,12 @@ namespace PracticalTask1.Algorithms
         {
             _cacheConnections.Clear();
 
-            return TranslateToEdgesForGraph(startNode, new List<Edge<string>>());
+            return null;
+            // todo нужно доработать
+            // return TranslateToEdgesForGraph(startNode, new List<Edge<string>>());
         }
         
+        // todo нужно доработать 
         private IReadOnlyList<Edge<string>> TranslateToEdgesForGraph(
             IReadOnlyList<DepartmentBase> departments,
             List<Edge<string>> createdEdges)
@@ -97,21 +98,21 @@ namespace PracticalTask1.Algorithms
                 {
                     var nameEmployeeCurrent = employee.ToString();
                     createdEdges.Add(new Edge<string>(nameDepartmentCurrent, nameEmployeeCurrent));
-                    TranslateToEdgesForGraph(employee as INode<T>, createdEdges);
+                    // TranslateToEdgesForGraph(employee as INode<T>, createdEdges);
                 }
             }
 
             return createdEdges;
         }
         
-        private IReadOnlyList<Edge<string>> TranslateToEdgesForGraph(
+        private IReadOnlyList<Edge<Vertex>> TranslateToEdgesForGraph(
             INode<T> startNode, 
-            List<Edge<string>> createdEdges)
+            List<Edge<Vertex>> createdEdges)
         {
-            var nameEdgePreview = startNode.Data.ToString();
+            var nameEdgePreview = startNode.ConvertToVertex();
             foreach (var neighbor in startNode.Neighbors)
             {
-                var nameEdgeCurrent = neighbor.Data.ToString();
+                var nameEdgeCurrent = neighbor.ConvertToVertex();
                 var connection = new Connection
                 {
                     Preview = nameEdgePreview,
@@ -119,41 +120,17 @@ namespace PracticalTask1.Algorithms
                 };
                 if (_cacheConnections.Contains(connection) == false)
                 {
-                    var newEdge = new Edge<string>(nameEdgePreview, nameEdgeCurrent);
+                    var newEdge = new Edge<Vertex>(nameEdgePreview, nameEdgeCurrent);
                     createdEdges.Add(newEdge);
                     _cacheConnections.Add(connection);
                 }
+
                 TranslateToEdgesForGraph(neighbor, createdEdges);
             }
 
             return createdEdges;
         }
-        
-        // private IReadOnlyList<Edge<string>> TranslateToEdgesForGraph(
-        //     INode<T> startNode, 
-        //     List<Edge<string>> createdEdges)
-        // {
-        //     var nameEdgePreview = startNode.Data.ToString();
-        //     foreach (var neighbor in startNode.Neighbors)
-        //     {
-        //         var nameEdgeCurrent = neighbor.Data.ToString();
-        //         var connection = new Connection
-        //         {
-        //             Preview = nameEdgePreview,
-        //             Current = nameEdgeCurrent
-        //         };
-        //         if (_cacheConnections.Contains(connection) == false)
-        //         {
-        //             var newEdge = new Edge<string>(nameEdgePreview, nameEdgeCurrent);
-        //             createdEdges.Add(newEdge);
-        //             _cacheConnections.Add(connection);
-        //         }
-        //         TranslateToEdgesForGraph(neighbor, createdEdges);
-        //     }
-        //
-        //     return createdEdges;
-        // }
-        
+
 
         /// <summary>
         /// Возвращаем все найденные узлы

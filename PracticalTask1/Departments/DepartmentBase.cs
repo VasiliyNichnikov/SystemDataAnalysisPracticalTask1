@@ -1,10 +1,14 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 using PracticalTask1.Algorithms;
 
 namespace PracticalTask1
 {
-    public abstract class DepartmentBase
+    public abstract class DepartmentBase : INode<DepartmentBase>
     {
+        public DepartmentBase Data => this;
+        public bool Visited { get; set; }
+        public IReadOnlyList<INode<DepartmentBase>> Neighbors => null;
         public string Name => _name;
         public IReadOnlyList<EmployeeBase> Staff => (IReadOnlyList<EmployeeBase>)_staff;
 
@@ -56,6 +60,16 @@ namespace PracticalTask1
         public override string ToString()
         {
             return $"<{Name}>";
+        }
+        
+        public bool CheckVerbatim(TypeSearch type)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Vertex ConvertToVertex()
+        {
+            return new Vertex(ToString(), Color.Brown);
         }
     }
 }

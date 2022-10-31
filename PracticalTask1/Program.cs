@@ -80,13 +80,10 @@ namespace PracticalTask1
             var drawer = new GraphDrawer(staff, departments);
             var request = new RequestCollector();
 
-            Example0(drawer, request); // работает
-            Console.WriteLine();
-            Example1(drawer, request); // работает
-            Console.WriteLine();
-            Example2(drawer, request); // работает
-            Console.WriteLine();
-            Example3(drawer, request);  // работает
+            // Example0(drawer, request); // работает
+            // Example1(drawer, request); // работает
+            // Example2(drawer, request); // работает
+            // Example3(drawer, request);  // работает
         }
     }
 }

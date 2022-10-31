@@ -137,8 +137,10 @@ namespace PracticalTask1
 
         public override string ToString()
         {
-            return $"<{_name}-{_surname}-{_middleName}-{_age}>";
+            return $"<{_name}-{_surname}-{_middleName}-{_age}-{GetInheritanceEmployee()}>";
         }
+
+        protected abstract string GetInheritanceEmployee();
         
         public Vertex ConvertToVertex()
         {

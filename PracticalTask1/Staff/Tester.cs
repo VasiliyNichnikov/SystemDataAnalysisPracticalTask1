@@ -16,5 +16,10 @@
         {
             return department is TestingDepartment;
         }
+
+        protected override string GetInheritanceEmployee()
+        {
+            return $"Сотрудник->Тестировщик";
+        }
     }
 }

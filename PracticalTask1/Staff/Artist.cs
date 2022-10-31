@@ -17,5 +17,10 @@
         {
             return department is DesignDepartment;
         }
+
+        protected override string GetInheritanceEmployee()
+        {
+            return "Сотрудник->Художник";
+        }
     }
 }

@@ -13,6 +13,11 @@ namespace PracticalTask1
             throw new System.NotImplementedException();
         }
 
+        protected override string GetInheritanceEmployee()
+        {
+            return "Сотрудник->Нет отдела";
+        }
+
         public EmployeeBase RecreateWithDepartment(TypeDepartment department)
         {
             if (department == TypeDepartment.None)

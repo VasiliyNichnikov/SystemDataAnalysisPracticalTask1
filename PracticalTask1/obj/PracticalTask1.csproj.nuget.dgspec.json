@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj": {}
+    "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj": {
+    "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
+        "projectUniqueName": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
         "projectName": "PracticalTask1",
-        "projectPath": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
-        "packagesPath": "C:\\Users\\vnich\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\obj\\",
+        "projectPath": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
+        "packagesPath": "C:\\Users\\v.nichnikov\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vnich\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\v.nichnikov\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -59,30 +57,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.17, 5.0.17]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[5.0.0, 5.0.0]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.214\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -15,8 +15,6 @@ C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\Pra
 C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\obj\Debug\net5.0\PracticalTask1.pdb
 C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\obj\Debug\net5.0\PracticalTask1.genruntimeconfig.cache
 C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\obj\Debug\net5.0\PracticalTask1.csproj.CopyComplete
-C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\QuikGraph.dll
-C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\QuikGraph.Graphviz.dll
 C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\System.Drawing.Common.dll
 C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
@@ -56,3 +54,15 @@ C:\Users\vnich\Documents\Code\C#\SystemDataAnalysisPracticalTask1\PracticalTask1
 C:\Users\vnich\Documents\Code\C#\SystemDataAnalysisPracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.Petri.dll
 C:\Users\vnich\Documents\Code\C#\SystemDataAnalysisPracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.dll
 C:\Users\vnich\Documents\Code\C#\SystemDataAnalysisPracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraphFS.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\DotParser.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\FSharp.Core.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\FSharpx.Collections.Experimental.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\FSharpx.Core.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.Data.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.FSA.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.FST.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.Glee.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.Graphviz.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.Petri.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraph.dll
+C:\Users\v.nichnikov\Documents\Code\University\PracticalTask1\PracticalTask1\PracticalTask1\bin\Debug\net5.0\YC.QuickGraphFS.dll

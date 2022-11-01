@@ -1,21 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "lnT2Nb2cTikYki0Re7UF5weK6h8nQNQyKefFuUU7Mj8+lQUElFQEtmda2ssRTp3NqpRzLK1nhP3WKfEu+EX6Hw==",
+  "dgSpecHash": "EKy48O+r2y8l9+aaoUrNGGfxAuTmjHjOgMHPdZCQpIkXmU3EKrpR5s+g03xA+Xgql6GGWS2XUPNVLtyCddssLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vnich\\Documents\\Code\\C#\\SystemDataAnalysisPracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
+  "projectFilePath": "C:\\Users\\v.nichnikov\\Documents\\Code\\University\\PracticalTask1\\PracticalTask1\\PracticalTask1\\PracticalTask1.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\vnich\\.nuget\\packages\\dotnet.contracts\\1.10.10126.1\\dotnet.contracts.1.10.10126.1.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\dotparser\\1.0.6\\dotparser.1.0.6.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\fsharp.core\\2.0.0\\fsharp.core.2.0.0.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\fsharpx.collections.experimental\\1.7.3\\fsharpx.collections.experimental.1.7.3.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\fsharpx.core\\1.7.3\\fsharpx.core.1.7.3.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\yc.quickgraph\\3.7.4\\yc.quickgraph.3.7.4.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\vnich\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512"
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\dotnet.contracts\\1.10.10126.1\\dotnet.contracts.1.10.10126.1.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\dotparser\\1.0.6\\dotparser.1.0.6.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\fsharp.core\\2.0.0\\fsharp.core.2.0.0.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\fsharpx.collections.experimental\\1.7.3\\fsharpx.collections.experimental.1.7.3.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\fsharpx.core\\1.7.3\\fsharpx.core.1.7.3.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\v.nichnikov\\.nuget\\packages\\yc.quickgraph\\3.7.4\\yc.quickgraph.3.7.4.nupkg.sha512"
   ],
   "logs": [
     {

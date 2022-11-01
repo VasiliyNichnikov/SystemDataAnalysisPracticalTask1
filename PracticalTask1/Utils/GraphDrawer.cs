@@ -22,12 +22,28 @@ namespace PracticalTask1.Utils
             _departments = departments;
         }
 
-        public void Draw(TypeSearch type, string nameGraphFile="graph")
+        /// <summary>
+        /// Сброс параметров перед поиском сотрудников
+        /// </summary>
+        private void ResetStaff()
         {
             foreach (var employee in _staff)
             {
+                employee.Visited = false;
                 employee.Excluded = true;
             }
+        }
+        
+        /// <summary>
+        /// Отрисовка графа
+        /// Тут конечно не совсем логика, так как смысл другой, а в итоге мы тут
+        /// совершаем логику и рисуем
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="nameGraphFile"></param>
+        public void Draw(TypeSearch type, string nameGraphFile="graph")
+        {
+            ResetStaff();
             
             var nodes = _dfsEmployee.FoundAllNodes(_staff[4],new List<EmployeeBase>(), type);
             
